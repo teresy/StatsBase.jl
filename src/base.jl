@@ -133,8 +133,8 @@ optionally over the given dimensions. `m` may contain means for each dimension o
 whereas the sum is scaled with `n` if `corrected` is `false` where `n = length(x)`.
 
 !!! note
-    Julia does not ignore `NaN` values in the computation. Use the [`missing`](@ref) type
-    to represent missing values, and the [`skipmissing`](@ref) function to omit them.
+    If `v`` contains`NaN` values, they are propagated to the result. Use the `missing` type
+    to represent missing values instead, and the `skipmissing` function to ignore them.
 """
 varm(A::AbstractArray, m::AbstractArray; corrected::Bool=true, dims=:) = _varm(A, m, corrected, dims)
 
@@ -162,8 +162,8 @@ whereas the sum is scaled with `n` if `corrected` is `false` where `n = length(x
 The mean `mean` over the region may be provided.
 
 !!! note
-    Julia does not ignore `NaN` values in the computation. Use the [`missing`](@ref) type
-    to represent missing values, and the [`skipmissing`](@ref) function to omit them.
+    If `v`` contains`NaN` values, they are propagated to the result. Use the `missing` type
+    to represent missing values instead, and the `skipmissing` function to ignore them.
 """
 var(A::AbstractArray; corrected::Bool=true, mean=nothing, dims=:) = _var(A, corrected, mean, dims)
 
@@ -226,8 +226,8 @@ then the sum is scaled with `n-1`, whereas the sum is scaled with `n` if `correc
 `false` where `n = length(x)`.
 
 !!! note
-    Julia does not ignore `NaN` values in the computation. Use the [`missing`](@ref) type
-    to represent missing values, and the [`skipmissing`](@ref) function to omit them.
+    If `v`` contains`NaN` values, they are propagated to the result. Use the `missing` type
+    to represent missing values instead, and the `skipmissing` function to ignore them.
 """
 std(A::AbstractArray; corrected::Bool=true, mean=nothing, dims=:) = _std(A, corrected, mean, dims)
 
@@ -255,8 +255,8 @@ then the sum is scaled with `n-1`, whereas the sum is
 scaled with `n` if `corrected` is `false` where `n = length(x)`.
 
 !!! note
-    Julia does not ignore `NaN` values in the computation. Use the [`missing`](@ref) type
-    to represent missing values, and the [`skipmissing`](@ref) function to omit them.
+    If `v`` contains`NaN` values, they are propagated to the result. Use the `missing` type
+    to represent missing values instead, and the `skipmissing` function to ignore them.
 """
 stdm(iterable, m; corrected::Bool=true) =
     std(iterable, corrected=corrected, mean=m)
