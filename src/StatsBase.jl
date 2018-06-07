@@ -124,6 +124,9 @@ module StatsBase
     corspearman,       # spearman's rank correlation
     corkendall,        # kendall's rank correlation
 
+    ## partialcor
+    partialcor,        # partial correlation
+
     ## signalcorr
     autocov!, autocov,      # auto covariance
     autocor!, autocor,      # auto correlation
