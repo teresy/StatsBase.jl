@@ -61,8 +61,8 @@ function histrange(lo::F, hi::F, n::Integer, closed::Symbol=:left) where F
                 step *= 10
             end
             divisor = one(F)
-            start = step*floor(lo/step)
-            len = ceil((hi - start)/step)
+            start = step*fld(lo,step)
+            len = cld((hi - start),step)
         else
             divisor = exp10(-floor(lbw))
             r = bw * divisor
